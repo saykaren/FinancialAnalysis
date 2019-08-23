@@ -1,4 +1,3 @@
-// import React from 'react';
 import React, {useState} from 'react';
 import './App.scss';
 import Footer from './Footer';
@@ -40,13 +39,9 @@ function App() {
   const [netIncome, setNetIncome] = useState(1);
   const [cashFlow, setCashFlow] = useState(1);
 
-  // const averageShareholdersEquity = ((Number(begShareholderEquity)+Number(shareholderEquity))/2);
-  // const averageShareholdersEquityAnswer = averageShareholdersEquity.toFixed(2);
-  // const averageTotalCurrentAssets = ((Number(totalAssets)+Number(endTotalAssets))/2);
-  // const averageTotalCurrentAssetsAnswer = averageTotalCurrentAssets.toFixed(2);
   const currentRatioCalculation = (Number(currentAssets)/Number(currentLiabilities));	
   const currentRatioCalculationAnswer = currentRatioCalculation.toFixed(2);
-  const quickRatioCalculation = (Number(cashFunds)+Number(cashFunds)+Number(accountRec))/(Number(currentLiabilities));
+  const quickRatioCalculation = (Number(bankAccount)+Number(cashFunds)+Number(accountRec))/(Number(currentLiabilities));
   const quickRatioAnswer = quickRatioCalculation.toFixed(2);
   const averageSalesPerDay = (Number(salesRev)/Number(timePeriod));
   const averageSalesPerDayAnswer = averageSalesPerDay.toFixed(2);
@@ -76,154 +71,93 @@ function App() {
       <main id="main">        
         <section className="column" id="InputColumn">
           <h2>Input</h2>
-          <FormDiv 
-            title={"Days in Time Period Reviewing:"}
-            value={timePeriod}
-            changeParameter={setTimePeriod}
-          />
+            <FormDiv 
+              title={"Days in Time Period Reviewing:"}
+              value={timePeriod}
+              changeParameter={setTimePeriod}
+            />
           <h2>Balance Sheet From Beginning of Period:</h2>
-          <FormDiv 
-            title={"Total  Assests"}
-            value={totalAssets}
-            changeParameter={setTotalAssets}
-          />
-          <FormDiv 
-            title={"Total Shareholders Equity "}
-            value={begShareholderEquity}
-            changeParameter={setBegShareholderEquity}
-          />
-  
-
+            <FormDiv 
+              title={"Total  Assests"}
+              value={totalAssets}
+              changeParameter={setTotalAssets}
+            />
+            <FormDiv 
+              title={"Total Shareholders Equity "}
+              value={begShareholderEquity}
+              changeParameter={setBegShareholderEquity}
+            />
           <h2>Balance Sheet From End of Period:</h2>
-          <FormDiv 
-            title={"Cash / Total Bank Accounts "}
-            value={bankAccount}
-            changeParameter={setBankAccount}
-          />
-          <FormDiv 
-            title={"Cash Equivalents  / Undeposited Funds"}
-            value={cashFunds}
-            changeParameter={setCashFunds}
-          />
-          <FormDiv 
-            title={"Accounts Receivable"}
-            value={accountRec}
-            changeParameter={setAccountRec}
-          />
-
-          <FormDiv 
-            title={"Current Assets"}
-            value={currentAssets}
-            changeParameter={setCurrentAssets}
-          />
-
-          <form>
-            <label>
-              Total Assests
-              <input 
-                type="number" 
-                name="time"
-                value={endTotalAssets}  
-                onChange={e=>setEndTotalAssets(e.target.value)}
-              />
-            </label>
-          </form>
-          <form>
-            <label>
-              Current Liabilities
-              <input 
-                type="number" 
-                name="time"
-                value={currentLiabilities}  
-                onChange={e=>setCurrentLiabilities(e.target.value)}
-              />
-            </label>
-          </form>
-          <form>
-            <label>
-              Total Shareholders Equity
-              <input 
-                type="number" 
-                name="time"
-                value={shareholderEquity}  
-                onChange={e=>setShareholderEquity(e.target.value)}
-              />
-            </label>
-          </form>
+            <FormDiv 
+              title={"Cash / Total Bank Accounts "}
+              value={bankAccount}
+              changeParameter={setBankAccount}
+            />
+            <FormDiv 
+              title={"Cash Equivalents  / Undeposited Funds"}
+              value={cashFunds}
+              changeParameter={setCashFunds}
+            />
+            <FormDiv 
+              title={"Accounts Receivable"}
+              value={accountRec}
+              changeParameter={setAccountRec}
+            />
+            <FormDiv 
+              title={"Current Assets"}
+              value={currentAssets}
+              changeParameter={setCurrentAssets}
+            />
+            <FormDiv 
+              title={"Total Assests"}
+              value={endTotalAssets}
+              changeParameter={setEndTotalAssets}
+            />
+            <FormDiv 
+              title={"Current Liabilities"}
+              value={currentLiabilities}
+              changeParameter={setCurrentLiabilities}
+            />
+            <FormDiv 
+              title={"Total Shareholders Equity"}
+              value={shareholderEquity}
+              changeParameter={setShareholderEquity}
+            />
           <h2>Profit and Loss Statement</h2>
-          <form>
-            <label>
-              Sales Revenue / Total Sales of Product Income
-              <input 
-                type="number" 
-                name="time"
-                value={salesRev}  
-                onChange={e=>setSalesRev(e.target.value)}
-              />
-            </label>
-          </form>
-          <form>
-            <label>
-              COGS / Total Cost of Goods Sold
-              <input 
-                type="number" 
-                name="time"
-                value={cogs}  
-                onChange={e=>setCogs(e.target.value)}
-              />
-            </label>
-          </form>
-          <form>
-            <label>
-              Gross Profit
-              <input 
-                type="number" 
-                name="time"
-                value={grossProf}  
-                onChange={e=>setGrossProf(e.target.value)}
-              />
-            </label>
-          </form>
-          <form>
-            <label>
-              Net Operating Income
-              <input 
-                type="number" 
-                name="time"
-                value={netOper}  
-                onChange={e=>setNetOper(e.target.value)}
-              />
-            </label>
-          </form>
-          <form>
-            <label>
-              Net Income
-              <input 
-                type="number" 
-                name="time"
-                value={netIncome}  
-                onChange={e=>setNetIncome(e.target.value)}
-              />
-            </label>
-          </form>
+            <FormDiv 
+              title={"Sales Revenue / Total Sales of Product Income"}
+              value={salesRev}
+              changeParameter={setSalesRev}
+            />
+            <FormDiv 
+              title={"COGS / Total Cost of Goods Sold"}
+              value={cogs}
+              changeParameter={setCogs}
+            />
+            <FormDiv 
+              title={"Gross Profit"}
+              value={grossProf}
+              changeParameter={setGrossProf}
+            />
+            <FormDiv 
+              title={"Net Operating Income"}
+              value={netOper}
+              changeParameter={setNetOper}
+            />
+            <FormDiv 
+              title={"Net Income"}
+              value={netIncome}
+              changeParameter={setNetIncome}
+            />
           <h2>Statement of Cash Flows</h2>
-          <form>
-            <label>
-              Cash Flow From Operating Activities / Net Cash provided by operating activities
-              <input 
-                type="number" 
-                name="time"
-                value={cashFlow}  
-                onChange={e=>setCashFlow(e.target.value)}
-              />
-            </label>
-          </form>
-          
+            <FormDiv 
+              title={" Cash Flow From Operating Activities / Net Cash provided by operating activities"}
+              value={cashFlow}
+              changeParameter={setCashFlow}
+            />          
         </section>
         <section className="column" id="OutputColumn">
-          <h2>Results</h2>
-         
-   
+          <h2>Results</h2> 
             <details>
               <summary>Current Ratio {currentRatioCalculationAnswer}% </summary>
               <p className="calculationDetails">Ratio under 1 indicates that a company's liabilities are greater than its assets and suggests that the company in question would be unable to pay off it's obligations if they came due at that point. Ration below 1 shows that the company is not in good financial health. On the other hand, a high ratio (over 3) does not necessarily indicate that a company is in a state of financial well-being either. Depending on how the company’s assets are allocated, a high current ratio may suggest that that company is not using its current assets efficiently, is not securing financing well or is not managing its working capital well. To better assess whether or not these issues are present, a liquidity ratio more specific than the current ratio is needed.     Unlike many other liquidity ratios, it incorporates all of a company’s current assets, even those that cannot be easily liquidated. As such, a high current ratio cannot be used to effectively determine if a company is inefficiently deploying its assets, whereas certain other liquidity ratios can. </p>
