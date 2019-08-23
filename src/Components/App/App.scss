@@ -35,6 +35,11 @@
   }
 }
 
+.calculationDetails{
+  background-color: $main_color;
+  color: white;
+  font-size: 0.8rem;
+}
 
 .column {
   background-color: $component_box_color;
@@ -56,4 +61,12 @@ form {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+}
+
+summary{
+  background-color: white;
+  display: flex;
+  justify-content: left;
+  padding: .5rem;
+  margin: .5rem;
 }
