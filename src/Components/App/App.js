@@ -3,6 +3,22 @@ import React, {useState} from 'react';
 import './App.scss';
 import Footer from './Footer';
 
+const FormDiv = ({title, value, changeParameter})=>{
+  return(
+    <form>
+      <label>
+        {title}
+        <input 
+          type="number" 
+          value={value}
+          onChange={e=>changeParameter(e.target.value)}
+        />
+      </label>
+    </form>
+  )
+}
+
+
 function App() {
 
   const [timePeriod, setTimePeriod] = useState(0);
@@ -22,20 +38,7 @@ function App() {
   const [netIncome, setNetIncome] = useState(0);
   const [cashFlow, setCashFlow] = useState(0);
 
-  const FormDiv = ({title, value, changeParameter})=>{
-    return(
-      <form>
-        <label>
-          {title}
-          <input 
-            type="number" 
-            value={value}
-            onChange={e=>changeParameter(e.target.value)}
-          />
-        </label>
-      </form>
-    )
-  }
+ 
 
   
 
@@ -58,73 +61,36 @@ function App() {
             value={totalAssets}
             changeParameter={setTotalAssets}
           />
-          <form>
-            <label>
-              Total  Assests
-              <input 
-                type="number" 
-                name="time" 
-                value={totalAssets}  
-                onChange={e=>setTotalAssets(e.target.value)}
-              />
-            </label>
-          </form>
-          <form>
-            <label>
-            Total Shareholders Equity 
-              <input 
-                type="number" 
-                name="time"
-                value={begShareholderEquity}  
-                onChange={e=>setBegShareholderEquity(e.target.value)}
-              />
-            </label>
-          </form>
+          <FormDiv 
+            title={"Total Shareholders Equity "}
+            value={begShareholderEquity}
+            changeParameter={setBegShareholderEquity}
+          />
+  
+
           <h2>Balance Sheet From End of Period:</h2>
-          <form>
-            <label>
-              Cash / Total Bank Accounts
-              <input 
-                type="number" 
-                name="time"
-                value={bankAccount}  
-                onChange={e=>setBankAccount(e.target.value)}
-              />
-            </label>
-          </form>
-          <form>
-            <label>
-              Cash Equivalents  / Undeposited Funds
-              <input 
-                type="number" 
-                name="time"
-                value={cashFunds}  
-                onChange={e=>setCashFunds(e.target.value)}
-              />
-            </label>
-          </form>
-          <form>
-            <label>
-              Accounts Receivable
-              <input 
-                type="number" 
-                name="time"
-                value={accountRec}  
-                onChange={e=>setAccountRec(e.target.value)}
-              />
-            </label>
-          </form>
-          <form>
-            <label>
-              Current Assets
-              <input 
-                type="number" 
-                name="time"
-                value={currentAssets}  
-                onChange={e=>setCurrentAssets(e.target.value)}
-              />
-            </label>
-          </form>
+          <FormDiv 
+            title={"Cash / Total Bank Accounts "}
+            value={bankAccount}
+            changeParameter={setBankAccount}
+          />
+          <FormDiv 
+            title={"Cash Equivalents  / Undeposited Funds"}
+            value={cashFunds}
+            changeParameter={setCashFunds}
+          />
+          <FormDiv 
+            title={"Accounts Receivable"}
+            value={accountRec}
+            changeParameter={setAccountRec}
+          />
+
+          <FormDiv 
+            title={"Current Assets"}
+            value={currentAssets}
+            changeParameter={setCurrentAssets}
+          />
+
           <form>
             <label>
               Total Assests
