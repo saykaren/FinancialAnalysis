@@ -129,8 +129,8 @@ function App() {
               <input 
                 type="number" 
                 name="time"
-                value={totalAssets}  
-                onChange={e=>setTotalAssets(e.target.value)}
+                value={endTotalAssets}  
+                onChange={e=>setEndTotalAssets(e.target.value)}
               />
             </label>
           </form>
@@ -228,14 +228,16 @@ function App() {
         </section>
         <section className="column" id="OutputColumn">
           <h2>Results</h2>
-          Time Period {timePeriod} <br></br>
+          Time Period {timePeriod} <br></br><br></br>
           Total Assets {totalAssets}<br></br>
           Beginning Shareholders Equity {begShareholderEquity} <br></br>
+
+          <br></br>
           Bank Account {bankAccount}<br></br>
           Cash {cashFunds}<br></br>
           Accounts Receivable {accountRec}<br></br>
           Current Assets {currentAssets}<br></br>
-          End Total Assets {totalAssets}<br></br>
+          End Total Assets {endTotalAssets}<br></br>
           Current Liabilities {currentLiabilities}<br></br>
           Shareholders {shareholderEquity}<br></br>
           Sales Revenue{salesRev}<br></br>
@@ -244,6 +246,20 @@ function App() {
           Net Operating {netOper}<br></br>
           Net Income {netIncome}<br></br>
           Cash Flow {cashFlow}
+
+
+            <details>
+              <summary>Average Shareholders Equity {(begShareholderEquity+shareholderEquity)/2}	</summary>
+              <p>details </p>
+            </details>
+            <details>
+              <summary>Average Total Current Assests	 {(totalAssets+endTotalAssets)/2}	</summary>
+              <p>details </p>
+            </details>
+            <details>
+              <summary>Current Ratio {(currentAssets/currentLiabilities)}	 	</summary>
+              <p>details </p>
+            </details>
 
         </section>
       </main>
